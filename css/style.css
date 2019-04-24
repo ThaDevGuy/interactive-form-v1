@@ -179,3 +179,27 @@ button:hover {
 		width: 49%;
 	}
 }
+
+
+
+
+/*custom styles*/
+.helper {
+	position: relative;
+}
+
+.helper::before  {
+	content: attr(data-tip);
+	background-color: #ff9865;
+	color: #f0efea;
+	border-radius: 3px;
+	padding: 2.4px 10px 2.4px 10px ;
+	font-size: 10px;
+	position: absolute;
+	left: 9%;
+	top: -60%;
+	
+}
+.helper + input {
+	outline: 3px solid #ff9865;
+}

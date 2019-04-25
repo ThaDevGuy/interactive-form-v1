@@ -188,8 +188,8 @@ $(document).ready(function () {
         //validate cvv
         if(target.id === "cvv") {
             removeHelper($('#cvv'));
-            if(target.value.length < 1) {
-                showHelper('Please enter your cvv', $('#cvv'));
+            if(target.value.length < 3) {
+                showHelper('Please enter your 3 digit cvv', $('#cvv'));
             }
             if(!/^\d+$/.test(target.value) && target.value.length > 0 || target.value.length > 3){
                 showHelper(`Invalid cvv, cvv must be a 3 digit`, $('#cvv'));
@@ -203,8 +203,6 @@ $(document).ready(function () {
        //if there is any class .helper or no activity checked or no design selected or no text typed prevent submit
        if($('#design option:selected').text() === "Select Theme" || $('.helper').get() > 0 || $('input:checked').get() < 1 || $('#mail').value.length < 1) {
            if($('input:checked').get() < 1) {
-               console.log('Inside');
-               console.log($('.activities > label:nth-of-type(1)'));
                showHelper('Please select at least one activies', $('.activities > label:nth-of-type(1)'));
            }
            else {
@@ -213,7 +211,6 @@ $(document).ready(function () {
            
            if($('#design option:selected').text() === "Select Theme") {
                 showHelper('Please select a design', $('#design'));
-                console.log('not selected');
             }
             e.preventDefault();
        }
@@ -221,7 +218,6 @@ $(document).ready(function () {
        textInputs[4] = $('#mail').get(0);
        textInputs.forEach(function (textInput) {
            if(textInput.value.length < 1) {
-               console.log(textInput.value.length);
                showHelper('This field is required', $('#' + textInput.id));
                e.preventDefault();
            }

@@ -184,22 +184,13 @@ button:hover {
 
 
 /*custom styles*/
-.helper {
-	position: relative;
-}
-
-.helper::before  {
+.helper::after {
 	content: attr(data-tip);
 	background-color: #ff9865;
-	color: #f0efea;
-	border-radius: 3px;
-	padding: 2.4px 10px 2.4px 10px ;
-	font-size: 10px;
-	position: absolute;
-	left: 9%;
-	top: -60%;
-	
-}
-.helper + input {
-	outline: 3px solid #ff9865;
+	color: #273538;
+	border-radius: 10px;
+	display: inline-block;
+	padding: 5px 10px;
+	font-size: 13px;
+	margin-left: 3px;
 }

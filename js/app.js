@@ -82,7 +82,7 @@ $(document).ready(function () {
         if(e.currentTarget.checked === true) {
             e.currentTarget.className = "checked";
             //remove any helpers if any
-            removeHelper($('.activities > label:nth-of-type(2)'));
+            removeHelper($('.activities >label:nth-of-type(1)'));
             totalFees += currentFees;
         }
         else {
@@ -204,11 +204,11 @@ $(document).ready(function () {
        if($('#design option:selected').text() === "Select Theme" || $('.helper').get() > 0 || $('input:checked').get() < 1 || $('#mail').value.length < 1) {
            if($('input:checked').get() < 1) {
                console.log('Inside');
-               console.log($('.activities > label:nth-of-type(2)'));
-               showHelper('Please select at least one activies', $('.activities > label:nth-of-type(2)'));
+               console.log($('.activities > label:nth-of-type(1)'));
+               showHelper('Please select at least one activies', $('.activities > label:nth-of-type(1)'));
            }
            else {
-               removeHelper($('.activities > label:nth-of-type(2)'));
+               removeHelper($('.activities > label:nth-of-type(1)'));
            }
            
            if($('#design option:selected').text() === "Select Theme") {
